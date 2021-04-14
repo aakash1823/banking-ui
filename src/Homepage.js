@@ -31,6 +31,8 @@ const useStyles = makeStyles((theme) => ({
     },
     a:{
     marginTop:'8%',
+    border: "3px solid black",
+    borderRadius:"10px"
     },
     txt:{
         textDecoration:'none',
@@ -52,7 +54,7 @@ const Homepage = () => {
         </Grid>
         <Grid item xs={6} >
         <div>
-        <Typography variant="h1" component="h2" style={{fontFamily:'Zilla Slab'}}>BANKING SYSYTEM</Typography>
+        <Typography variant="h1" component="h2" style={{fontFamily:'Zilla Slab',fontSize:"110px"}}>BANKING SYSYTEM</Typography>
         </div>
         <Button variant="outlined" size="large"color="black" className={classes.a}>
         <Link to="/customers" className={classes.txt}>Click here to proceed</Link>

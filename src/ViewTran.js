@@ -1,5 +1,4 @@
 import AllTransac from "./AllTransac";
-import Transactionhistory from "./Transactionhistory";
 import useFetch from "./useFetch";
 
 const ViewTran = ({a}) => {

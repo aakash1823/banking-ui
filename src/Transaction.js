@@ -1,5 +1,5 @@
 import React from 'react';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import SendIcon from '@material-ui/icons/Send';
 import { useState } from "react";
@@ -11,7 +11,6 @@ import InputLabel from '@material-ui/core/InputLabel';
 import useFetch from "./useFetch";
 import Popup from "./Popup";
 import { Typography } from '@material-ui/core';
-import { Link } from 'react-router-dom';
 import ReactFontLoader from 'react-font-loader';
 const useStyles = makeStyles((theme) => ({
 
@@ -55,11 +54,11 @@ const Transaction = () => {
     const [pop1, setpop1] = useState(false);
     const [c,setinvalid]=useState("AMOUNT IS INSUFFICIENT OR INCORRECT ACCOUNT NUMBER")
     var b=window.location.pathname.split("/")[2];
-    const[k,setpath]=useState("/transaction/"+b)
+    // const[k,setpath]=useState("/transaction/"+b)
     // const[history,sethistory]=useState("/transaction/history/"+b)
     const[l,setpopuphead]=useState("")
-    const [age, setAge] = React.useState('');
-    const { error, isPending, data: id } = useFetch('http://localhost:8080/selection/'+b)
+    // const [age, setAge] = React.useState('');
+    const {data: id } = useFetch('http://localhost:8080/selection/'+b)
     console.log(id)
     var history="/history/"+b
     async function handleSubmit1(accountno,amount,b){
@@ -116,7 +115,7 @@ const Transaction = () => {
   
     return ( 
         <div>
-            { pop1 && <Popup g={c} q={k} m={l}/>}
+            { pop1 && <Popup g={c} q={history} m={l}/>}
       <div className={classes.b} >
       <ReactFontLoader url='https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500&display=swap' />
 
@@ -153,9 +152,8 @@ const Transaction = () => {
         
         className={classes.button}
         endIcon={<SendIcon/>}
-        onClick={handleSubmit}
-      ><Link to={history} className={classes.txt1}>
-      SEND</Link>
+        onClick={handleSubmit}>SEND
+     
         
       
       </Button>

@@ -11,6 +11,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import SendIcon from '@material-ui/icons/Send';
+import ReactFontLoader from 'react-font-loader';
 
 import axios from "axios";
 
@@ -40,9 +41,21 @@ const useStyles = makeStyles({
   },
   button: {
     marginLeft:'2%',
-    
+    borderRadius:"0px 20px 20px 0px",
     backgroundColor:'black',
   },
+  img:{
+    width:'100%',
+    height:'130px',
+marginLeft:"2%",
+marginRight:"0%",
+paddingRight:"0px",
+  },
+  img1:{
+    width:'10%',
+
+
+  }
 });
 
 const CustTable = ({cust}) => {
@@ -75,47 +88,52 @@ const CustTable = ({cust}) => {
         const a={value};
         console.log(a)
         
-        var d=handleSubmit1(value)
+        handleSubmit1(value)
         
 
     }
 
     return ( 
       
-                
-        <TableContainer component={Paper}>
-        
+      <div style={{backgroundColor:"#FAE2E2"}}>        
+        <TableContainer component={Paper}style={{width:"80%" ,align:"center",marginLeft:"auto",marginRight:"auto",border:"5px solid black"}}>
+       <ReactFontLoader url='https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500&display=swap' />
+
         <Table className={classes.table} aria-label="customized table">
           <TableHead>
             <TableRow>
-              <StyledTableCell align="center">Account Number</StyledTableCell>
+              <StyledTableCell align="center"style={{fontFamily:'Zilla Slab',fontSize:"15px"}}>Customer Image</StyledTableCell>
+              <StyledTableCell align="center"style={{fontFamily:'Zilla Slab',fontSize:"15px"}}>Account Number</StyledTableCell>
 
-              <StyledTableCell align="center"> First Name</StyledTableCell>
+              <StyledTableCell align="center"style={{fontFamily:'Zilla Slab',fontSize:"15px"}}> First Name</StyledTableCell>
          
-              <StyledTableCell align="center"> Last Name</StyledTableCell>
-              <StyledTableCell align="center">Account type</StyledTableCell>
-              <StyledTableCell align="center">Account Status</StyledTableCell>
-              <StyledTableCell align="center">Email</StyledTableCell>
-              <StyledTableCell align="center">Amount</StyledTableCell>
-              <StyledTableCell align="center">For Transaction and other details</StyledTableCell>
+              <StyledTableCell align="center"style={{fontFamily:'Zilla Slab',fontSize:"15px"}}> Last Name</StyledTableCell>
+              <StyledTableCell align="center"style={{fontFamily:'Zilla Slab',fontSize:"15px"}}>Account type</StyledTableCell>
+              <StyledTableCell align="center"style={{fontFamily:'Zilla Slab',fontSize:"15px"}}>Account Status</StyledTableCell>
+              <StyledTableCell align="center"style={{fontFamily:'Zilla Slab',fontSize:"15px"}}>Email</StyledTableCell>
+              <StyledTableCell align="center"style={{fontFamily:'Zilla Slab',fontSize:"15px"}}>Amount</StyledTableCell>
+              <StyledTableCell align="center"style={{fontFamily:'Zilla Slab',fontSize:"15px"}}>For Transaction and other details</StyledTableCell>
 
             </TableRow>
           </TableHead>
           <TableBody>
             {cust.map((row) => (
-            console.log(row.custid),
             
               <StyledTableRow key={row.custid}   >
                   
-                <StyledTableCell component="th" scope="row" align="center">
-                  {row.acnumber}
+                <StyledTableCell component="th" scope="row" align="left"className={classes.img1}>
+                  <img src={row.image+".jpg"} className={classes.img} alt="Customer "></img>
                 </StyledTableCell>
-                <StyledTableCell align="center">{row.fname}</StyledTableCell>
-                <StyledTableCell align="center">{row.ltname}</StyledTableCell>
-                <StyledTableCell align="center">{row.atype}</StyledTableCell>
-                <StyledTableCell align="center">{row.astatus}</StyledTableCell>
-                <StyledTableCell align="center">{row.Email}</StyledTableCell>
-                <StyledTableCell align="center">{row.opening_balance}</StyledTableCell>
+                <StyledTableCell align="center"style={{fontFamily:'Zilla Slab',fontSize:"20px"}}>
+                {row.acnumber}
+                </StyledTableCell>
+                <StyledTableCell align="center"style={{fontFamily:'Zilla Slab',fontSize:"20px"}}>{row.fname}</StyledTableCell>
+                <StyledTableCell align="center"style={{fontFamily:'Zilla Slab',fontSize:"20px"}}>{row.ltname}</StyledTableCell>
+                <StyledTableCell align="center"style={{fontFamily:'Zilla Slab',fontSize:"20px"}}>{row.atype}</StyledTableCell>
+                
+                <StyledTableCell align="center"style={{fontFamily:'Zilla Slab',fontSize:"20px"}}>{row.astatus}</StyledTableCell>
+                <StyledTableCell align="center"style={{fontFamily:'Zilla Slab',fontSize:"20px"}}>{row.Email}</StyledTableCell>
+                <StyledTableCell align="center"style={{fontFamily:'Zilla Slab',fontSize:"20px",color:'green',fontWeight:"bold"}}>{row.opening_balance}</StyledTableCell>
                 <StyledTableCell align="center">
                     
                     <form >
@@ -140,6 +158,7 @@ const CustTable = ({cust}) => {
           </TableBody>
         </Table>
       </TableContainer>
+      </div>
      );
 }
  

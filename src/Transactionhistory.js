@@ -9,10 +9,8 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import Icon from '@material-ui/core/Icon';
 import Button from '@material-ui/core/Button';
 import SendIcon from '@material-ui/icons/Send';
-import { useState } from "react";
 import { Link } from 'react-router-dom';
 
 
@@ -54,8 +52,8 @@ const useStyles = makeStyles((theme) => ({
 
 const Transactionhistory = ({cust}) => {
     const classes = useStyles();
-    const [cusid,setcusid]=useState('')
-    const [pass, setpass] = useState('');
+    // const [cusid,setcusid]=useState('')
+    // const [pass, setpass] = useState('');
     var b=window.location.pathname.split("/")[2];
     var path="/transaction/"+b
     
