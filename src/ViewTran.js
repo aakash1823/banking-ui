@@ -3,7 +3,7 @@ import useFetch from "./useFetch";
 
 const ViewTran = ({a}) => {
     
-    const { error, isPending, data:cust } = useFetch('http://localhost:8080/'+a)
+    const { error, isPending, data:cust } = useFetch('/'+a)
     console.log(cust)
     return (  
         <div>

@@ -58,11 +58,11 @@ const Transaction = () => {
     // const[history,sethistory]=useState("/transaction/history/"+b)
     const[l,setpopuphead]=useState("")
     // const [age, setAge] = React.useState('');
-    const {data: id } = useFetch('http://localhost:8080/selection/'+b)
+    const {data: id } = useFetch('/selection/'+b)
     console.log(id)
     var history="/history/"+b
     async function handleSubmit1(accountno,amount,b){
-        axios.post('http://localhost:8080/trans ', {
+        axios.post('/trans ', {
             accountno,amount,b
           })
           .then(function (response) {

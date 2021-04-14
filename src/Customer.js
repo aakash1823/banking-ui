@@ -3,7 +3,7 @@ import useFetch from "./useFetch";
 import CustTable1 from "./CustTable1";
 const Customers = () => {
     var b=window.location.pathname.split("/")[2];
-    const { error, isPending, data: cust } = useFetch('http://localhost:8080/view/'+b)
+    const { error, isPending, data: cust } = useFetch('/view/'+b)
     console.log(cust)
     return (  
         <div>

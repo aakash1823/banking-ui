@@ -63,7 +63,7 @@ const CustTable = ({cust}) => {
   
     async function handleSubmit1(cusid){
         console.log(cusid)
-        axios.post('http://localhost:8080/view', {
+        axios.post('/view', {
             cusid
           })
           .then(function (response) {
