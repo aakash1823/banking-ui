@@ -61,8 +61,9 @@ const Transactionhistory = ({cust}) => {
   
 
     return ( 
-        
-        <TableContainer component={Paper}>
+      <div style={{backgroundColor:"#FAE2E2"}}>        
+
+        <TableContainer component={Paper}style={{width:"80%" ,align:"center",marginLeft:"auto",marginRight:"auto",border:"5px solid black"}}>
         <Table className={classes.table} aria-label="customized table">
           <TableHead>
             <TableRow>
@@ -108,6 +109,7 @@ const Transactionhistory = ({cust}) => {
       </Button>     
         </div>
       </TableContainer>
+      </div>
      );
      
 }
