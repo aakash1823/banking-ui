@@ -74,6 +74,13 @@ const Transaction = () => {
                 console.log("bye");
 
             }
+            if(response.data==="INVALID AMOUNT"){
+              setpopuphead("INVALID CREDENTIALS")
+              setinvalid("INVALID AMOUNT")
+              setpop1(true)
+              console.log("bye");
+
+          }
             if(response.data==="FUNDS INSUFFICIENT"){
               setpopuphead("INVALID CREDENTIALS")
 

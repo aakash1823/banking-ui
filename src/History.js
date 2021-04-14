@@ -3,7 +3,7 @@ import useFetch from "./useFetch";
 
 const History = () => {
     var b=window.location.pathname.split("/")[2];
-    const { error, isPending, data: history } = useFetch('/history/'+b)
+    const { error, isPending, data: history } = useFetch('/api/history/'+b)
     console.log(history)
     return (  
         <div>
